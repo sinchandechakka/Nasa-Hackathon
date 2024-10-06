@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Example</title>
+    <link rel="stylesheet" href="stylefiles\asteroid-scripts.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+  </head>
+  <body>
+    <div class="menu-dropdown">
+      <div class="col">
+        <div class="con">
+          <div class="bar top"></div>
+          <div class="bar middle"></div>
+          <div class="bar bottom"></div>
+        </div>
+      </div>
+      <div class="menu-content hidden">
+        <ul>
+          <a href="home.html">
+            <li>HOME</li>
+          </a>
+          <a href="main.html">
+            <li>ORRERY</li>
+          </a>
+          <a href="#">
+            <li>ASTEROIDS</li>
+          </a>
+        </ul>
+      </div>
+    </div>
+    <main>
+      <ul class='slider'>
+        <li class='item' style="background-image: url('assets/asteroids/comet-C.jpg')">
+          <div class='content'>
+            <h2 class='title'>Comet C</h2>
+            <ul class='description'><li>Name: Comet C/2023 E1 (ATLAS)</li>
+              <li>Average Size: The size is estimated but relatively small.</li>
+              <li>Discovered on: March 1, 2023, by the ATLAS project.</li>
+              <li>As of mid-2023, it passed at a safe distance of about 0.36 AU from Earth.</li>
+              <li>Time to Complete One Solar Orbit: This is a long-period comet, estimated to take thousands of years to orbit the Sun.</li>
+              <li>Visibility: Brightened to magnitude +10 by mid-2023, making it visible with binoculars or telescopes.</li>
+              </ul>
+          </div>
+        </li>
+        <li class='item' style="background-image: url('assets/asteroids/apophis.png')">
+          <div class='content'>
+            <h2 class='title'>Apophis</h2>
+            <ul class='description'><li>Average size: 340 meter.</li> 
+              <li>Discovered on 19th June 2004 at Kitt Peak National Observatory in Arizona.</li>
+              <li>Distance from earth : 2.05 astronomical units.</li>
+              <li>Velocity relative to sun 29.98 km/s.</li>
+              <li>Time to complete one full rotation 30.4 hours.</li>
+              <li>Time to complete one solar orbit 324 days.</li></ul>
+          </div>
+        </li>
+        <li class='item' style="background-image: url('assets/asteroids/bennu.jpg')">
+          <div class='content'>
+            <h2 class='title'>Bennu</h2>
+            <ul class='description'><li>Diameter About 492 meters.</li>
+              <li>Asteroid Bennu's average orbital speed is 28 kilometres per second.</li>
+              <li>Discovered by the LINEAR Project on 11 September 1999.</li>
+              <li>Bennu makes one orbit around the Sun every 1.2 years.</li>
+              <li>It makes one full rotation on its axis every 4.3 hours.</li>
+              <li>Bennu makes a close approach to Earth every six years.</li>
+              <li>Bennu’s average orbital distance from the Sun is about 168 million kilometres earths is 149 million years.</li>
+            </ul>
+          </div>
+        </li>
+        <li class='item' style="background-image: url('assets/asteroids/Asteroid-4660-nereus.jpg')">
+          <div class='content'>
+            <h2 class='title'>Asteroid 4660 nereus</h2>
+            <ul class='description'><li>Nereus is a near-Earth asteroid approximately 330 meters in diameter.</li>
+              <li>Speed : 14,719 miles per hour (23,688 km/h).</li>
+              <li>Discovered by Eleanor F. Helin <span class ="black">on</span> 28 February 1982.</li>
+              <li>The closest will be on 14 February 2060, at 1.2 <span class ="black">million km.</span></li>
+              <li>It makes one full <span class ="black">rotation on its</span> axis every 4.3 hours.</li>
+              <li>The most recent closest <span class ="black">approach</span> was on 11 December 2021, <span class ="black">when it</span> was 3.9 million km away.</li>
+              <li>It orbits the sun every 661 days.</li>
+            </ul>
+          </div>
+        </li>
+        <li class='item' style="background-image: url('assets/asteroids/Asteroid-2001-FO32.jpg')">
+          <div class='content'>
+            <h2 class='title'>Asteroid 2001 F032</h2>
+            <ul class='description'><li>Average Size: 440 meters to 1 kilometer in diameter.</li>
+              <li>Discovered on: March 23, 2001, by the LINEAR program in Socorro, New Mexico.</li>
+              <li>Distance from Earth: At its closest approach on March 21, 2021, it passed by Earth at a distance of 2 million kilometers (about 0.013 AU).</li>
+              <li>Velocity Relative to Sun: 34.4 km/s (124,000 km/h).</li>
+              <li>Time to Complete One Full Rotation: Roughly 3.2 hours.</li>
+              <li>Time to Complete One Solar Orbit: Approximately 810 days (2.2 years).</li>
+            </ul>
+          </div>
+        </li>
+        <li class='item' style="background-image: url('assets/asteroids/swift-tuttle.jpg')">
+          <div class='content'>
+            <h2 class='title'>Comet 109p</h2>
+            <ul class='description'><li>Average size: Approximately 26 kilometers (16 miles) in diameter</li>
+              <li>Discovered on: July 16, 1862, by Lewis Swift and Horace Tuttle.</li>
+              <li>Distance from Earth: At its closest approach, around 0.153 AU.</li>
+              <li>Velocity relative to Sun: 59 km/s.</li>
+              <li>Time to complete one full rotation: Estimated around ~2 days.</li>
+              <li>Time to complete one solar orbit: 133 years.</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <nav class='nav'>
+        <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+        <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+      </nav>
+    </main>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="scriptfiles\asteroid-script.js"></script>
+  </body>
+</html>

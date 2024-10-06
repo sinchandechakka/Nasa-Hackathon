@@ -1,0 +1,644 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+}
+a:hover {
+	text-decoration: none;
+}
+
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	cursor: none;
+}
+
+body {
+	font: normal 1em/1.45em "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	color: #fff;
+	background: radial-gradient(ellipse at bottom, #1c2837 0%, #050608 100%);
+	background-attachment: fixed;
+	overflow: hidden;
+}
+
+.celestial-body {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	margin-left: -25px;
+	margin-top: -25px;
+	background: radial-gradient(ellipse at center, #ffd000 1%, #f9b700 39%, #e06317 100%);
+	background-size: contain;
+	background-color: #ffcc00;
+	border-radius: 50%;
+	box-shadow: 0 0 10px 2px rgba(255, 107, 0, 0.4), 0 0 22px 11px rgba(255, 203, 0, 0.13);
+}
+
+.planet {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	pointer-events: none;
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+.planet-container {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+}
+
+.planet-container:hover .planet {
+	box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+}
+
+.mercury {
+	background: radial-gradient(circle at 70% 30%, #cd9064, #6f4b26);
+	box-shadow: 0 0 5px 1px #cb9671;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 10px;
+	height: 10px;
+}
+
+.venus {
+	background: radial-gradient(circle at 70% 30%, #d98c56, #d6670d);
+	box-shadow: 0 0 5px 1px #c19372;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 13px;
+	height: 13px;
+}
+
+.earth {
+	background: radial-gradient(circle at 70% 30%, #7ebf6a, #01acef);
+	box-shadow: 0 0 10px 2px #85d1ef;
+	background-size: contain;
+	position: relative;
+	width: 16px;
+	height: 16px;
+}
+
+.earth:after {
+	content: "";
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	background: grey;
+	box-shadow: 0 0 5px 2px #ffffff;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	margin-top: -4px;
+	margin-left: 25px;
+	transform-origin: -25px center;
+	animation: revolve 5s linear infinite;
+}
+
+.mars {
+	background: radial-gradient(circle at 30% 30%, #e77d11, #c1440e, #451804);
+	box-shadow: 0 0 10px 2px #e4ab72;
+	background-size: contain;
+	width: 15px;
+	height: 15px;
+}
+
+.jupiter {
+	background: radial-gradient(circle at 70% 30%, #ebf3f6, #e3dccb, #d8ca9d, #a59186, #c99039);
+	box-shadow: 0 0 10px 2px #d3c185;
+	background-size: contain;
+	width: 30px;
+	height: 30px;
+}
+
+.saturn {
+	background: radial-gradient(circle at 70% 30%, #c4b08b, #eddbad, #e2bf7d, #c3924f, #fceead);
+	box-shadow: 0 0 10px 2px rgb(189, 177, 136);
+	background-size: contain;
+	width: 28px;
+	height: 28px;
+}
+
+.saturn:after {
+	position: absolute;
+	content: "";
+	height: 15px;
+	width: 50px;
+	left: 50%;
+	top: 50%;
+	transform: rotateZ(-52deg);
+	margin-left: -25px;
+	margin-top: -10px;
+	border-radius: 100%;
+	box-shadow: 0 2px 0 2px #987641, 4px 2px 0 #987641, -4px 2px 0 #987641;
+	animation: orb 882.6952471456s linear infinite;
+	animation-direction: reverse;
+	transform-origin: 50% 50%;
+}
+
+.uranus {
+	background: radial-gradient(circle at 70% 30%, #eddbad, #e2bf7d, #c3924f, #fceead);
+	box-shadow: 0 0 10px 2px #a9a087;
+	background-size: contain;
+	width: 25px;
+	height: 25px;
+	filter: hue-rotate(180deg);
+}
+
+.neptune {
+	background: radial-gradient(circle at 70% 30%, #5b5ddf, #3f54ba, #274687);
+	box-shadow: 0 0 10px 2px #7b7de1;
+	background-size: contain;
+	width: 22px;
+	height: 22px;
+}
+
+.orbit {
+	position: absolute;
+	border: 2px solid rgba(102, 166, 229, 0.12);
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.orbit-mercury {
+	width: 84px;
+	height: 84px;
+}
+
+.orbit-venus {
+	width: 134px;
+	height: 138px;
+}
+
+.orbit-earth {
+	width: 250px;
+	height: 250px;
+}
+
+.orbit-mars {
+	width: 350px;
+	height: 340px;
+}
+
+.orbit-jupiter {
+	width: 500px;
+	height: 480px;
+}
+
+.orbit-saturn {
+	width: 600px;
+	height: 560px;
+}
+
+.orbit-uranus {
+	width: 700px;
+	height: 660px;
+}
+
+.orbit-neptune {
+	width: 900px;
+	height: 750px;
+}
+
+.tooltip {
+	position: absolute;
+	padding: 5px 10px;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: white;
+	border-radius: 5px;
+	font-size: 14px;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.3s;
+	z-index: 1000;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-content {
+	background-color: transparent;
+	display: flex;
+	flex-direction: row;
+	margin: 5% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 70%;
+	height: 70%;
+	overflow-y: auto;
+	position: relative;
+	border-radius: 50px;
+	animation: popUpFromBottom 0.5s ease-out;
+}
+
+@keyframes popUpFromBottom {
+	0% {
+	  transform: translateY(100%); /* Start from off-screen (bottom) */
+	  opacity: 0;                  /* Initially invisible */
+	}
+	100% {
+	  transform: translateY(0);     /* End at the original position */
+	  opacity: 1;                   /* Fully visible */
+	}
+  }
+
+.close-button {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#modal-planet-left {
+	flex: 1;
+	padding: 10px;
+	background-color: transparent;
+	margin-right: 10px;
+}
+
+#modal-planet-left img {
+	display: block;
+	margin: 0 auto;
+	max-width: 70%;
+	max-height: 200px;
+	object-fit: contain;
+}
+
+#modal-planet-left h2 {
+	font-family:'Bebas Neue', sans-serif;
+	text-align: center;
+	font-size: 50px;
+	margin-bottom: 15px;
+}
+
+.animated-letter {
+	display: inline-block;
+	opacity: 0;
+	transform: translateY(20px);
+	animation: appear 0.5s forwards;
+	animation-delay: calc(var(--i) * 0.1s);
+}
+
+@keyframes appear {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideInFromLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.animated-text {
+	opacity: 0;
+	animation: slideInFromLeft 0.5s forwards;
+	animation-delay: var(--delay);
+}
+
+#modal-planet-left h3 {
+	font-family:'Bebas Neue', sans-serif;
+	font-size: 30px;
+	color: #ddd;
+}
+
+#modal-planet-left p {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 20px;
+	margin-bottom: 10px;
+	line-height: 1.5;
+	color: #f2f2f2;
+}
+
+#modal-planet-right {
+	flex: 2;
+	margin-left: 100px;
+	margin-top: 50px;
+	background-color: transparent;
+	overflow-y: auto;
+}
+
+#modal-planet-right li {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 16px;
+	margin-bottom: 10px;
+	line-height: 1.5;
+	color: #f2f2f2;
+}
+
+@media (max-width: 768px) {
+	.modal-content {
+		flex-direction: column;
+		height: auto;
+	}
+
+	#modal-planet-left,
+	#modal-planet-right {
+		margin-right: 0;
+	}
+}
+
+@keyframes revolve {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.asteroid-layer {
+	position: absolute;
+	border-radius: 50%;
+	animation: rotateBelt linear infinite;
+	transform-origin: center center;
+	pointer-events: none;
+	border: none !important;
+}
+
+.asteroid-layer2 {
+	position: absolute;
+	border-radius: 50%;
+	animation: rotateBelt2 linear infinite;
+	transform-origin: center center;
+	pointer-events: none;
+	border: none !important;
+}
+
+.asteroid {
+	position: absolute;
+	border-radius: 50%;
+	background-color: rgba(162, 162, 162, 0.8);
+	box-shadow: 0 0 5px rgba(154, 154, 154, 0.8);
+	border: none;
+}
+
+@keyframes rotateBelt {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotateBelt2 {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(-360deg);
+	}
+}
+
+.star {
+	position: absolute;
+	background-color: rgb(255, 255, 255);
+	border-radius: 50%;
+}
+
+@keyframes orb {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(-360deg);
+	}
+}
+
+.asteroids-container {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+}
+
+.asteroids {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	pointer-events: none;
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+.asteroids-container:hover .asteroids {
+	transform: scale(1.2);
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+#apophis img{
+	width: 10px;
+	height: 10px;
+	background-image: url('./assets/asteroid-pics/ast1.png');
+	background-size: cover;
+	background-position: center;
+	transform: scale(2);
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+#bennu img {
+	width: 15px;
+	height: 15px;
+	transform: scale(1.6);
+	background-image: url('assets/asteroid-pics/ast2.png');
+	background-size: cover;
+}
+
+#obj4660 img{
+	width: 20px;
+	height: 20px;
+	background-image: url('assets/asteroid-pics/obj1.png');
+	background-size: cover;
+}
+
+#obj2001 img{
+	width: 18px;
+	height: 18px;
+	background-image: url('assets/asteroid-pics/obj2.png');
+	background-size: cover;
+}
+
+#cum109p img{
+	width: 26px;
+	height: 26px;
+	background-image: url('assets/asteroid-pics/cum1.png');
+	background-size: cover;
+}
+
+#cumc img{
+	width: 22px;
+	height: 22px;
+	background-image: url('assets/asteroid-pics/cum2.png');
+	background-size: cover;
+}
+
+.menu-dropdown {
+	height: 50px;
+	width: 50px;
+	background-color: #181818;
+	border-radius: 50%;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+	transition: all 0.4s ease;
+	z-index: 9999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  .menu-dropdown .menu-content {
+	background: #191919;
+	color: #fff;
+	height: 0;
+	width: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	transition: all 0.7s ease-in-out !important;
+	z-index: 9998;
+	display: none;
+  }
+  .menu-dropdown .menu-content ul {
+	padding: 20px;
+	margin: 0;
+	list-style: none;
+	padding-top: 52px;
+	text-align: center;
+  }
+  .menu-dropdown .menu-content ul li {
+	padding: 10px 0;
+	font-size: 17px;
+	transition: all 0.5s ease;
+  }
+  .menu-dropdown .menu-content ul li:hover {
+	color: rgb(255, 255, 255);
+  }
+  .menu-dropdown.menu-active {
+	height: 220px;
+	width: 160px;
+	border-radius: 10px;
+	display: block;
+	opacity: 0.8;
+  }
+  .menu-dropdown.menu-active .menu-content {
+	height: 220px;
+	width: 160px;
+	border-radius: 10px;
+	opacity: 0.4;
+	display: block;
+  }
+  .menu-dropdown .con {
+	display: block;
+	cursor: pointer;
+	display: inline-block;
+	position: fixed;
+	top: 28px;
+	right: 30px;
+	transition: all 0.4s ease;
+	display: block !important;
+	z-index: 9999 !important;
+  }
+  .menu-dropdown .bar {
+	display: block;
+	height: 4px;
+	width: 30px;
+	background: white;
+	margin: 5px auto;
+	border-radius: 5px;
+	transition: all 0.4s ease;
+  }
+  .menu-dropdown .con.menu-active .top {
+	transform: translateY(7px) rotateZ(45deg) !important;
+	transition: all 0.8s ease !important;
+  }
+  .menu-dropdown .con.menu-active .bottom {
+	transform: translateY(-11px) rotateZ(-45deg) !important;
+	transition: all 0.8s ease !important;
+  }
+  .menu-dropdown .con.menu-active .top,
+  .menu-dropdown .con.menu-active .bottom {
+	opacity: 1 !important;
+	transition: all 0.8s ease !important;
+	z-index: 9999;
+  }
+  .menu-dropdown .con.menu-active .middle {
+	opacity: 0 !important;
+	transition: opacity 0.8s ease !important;
+  }
+  .hidden {
+	display: none;
+  }
+
